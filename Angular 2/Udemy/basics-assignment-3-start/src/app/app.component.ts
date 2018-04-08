@@ -8,15 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   buttonClicked: boolean = false;
   timesClicked: number = 0;
-  clickHistory = [];
+  log = [];
 
   showHideDetails(){
     this.timesClicked += 1;
-    this.clickHistory.push(this.timesClicked)
-    if (this.buttonClicked === false)
-      this.buttonClicked = true;
-    else 
-      this.buttonClicked = false;
+    this.log.push(this.timesClicked);
+    this.buttonClicked = !this.buttonClicked;
   }
 
   getBackgroundColor(cycleCount) {
